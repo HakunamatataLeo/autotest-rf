@@ -1,0 +1,7 @@
+{
+  "HOST":"api.live.bilibili.com",
+  "SENDMSG":"/msg/send",
+  "COOKIE":"sid=avl44jds; pgv_pvi=1978499072; pgv_si=s4296964096; fts=1487691552; LIVE_BUVID=4a45379858d021b8657ac49f5b723b59; LIVE_BUVID__ckMd5=5e8be802de97e493; buvid3=D1E309A9-3F1E-4AC2-A814-06D06A18A8BC9250infoc; DedeUserID=28271989; DedeUserID__ckMd5=486bd071ec6360e7; SESSDATA=90a21063%2C1490283457%2Cd256afd7; bili_jct=5794658937edcbd1e6dbd0288bec3bfd; LIVE_LOGIN_DATA=042582eec23a41d07cf2c53a7bcd2808bc68be0f; LIVE_LOGIN_DATA__ckMd5=02690e84bab098c9; user_face=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Fface%2F8b966975aa6038aa20ca3e4c5b4621a92ed67c0d.jpg; _dfcaptcha=d9dca549d4dd05ec0fd3e84a0533da32; attentionData=%7B%22code%22%3A0%2C%22msg%22%3A%22success%22%2C%22message%22%3A%22success%22%2C%22data%22%3A%7B%22count%22%3A0%2C%22open%22%3A1%2C%22has_new%22%3A0%7D%7D; CNZZDATA2724999=cnzz_eid%3D1394820671-1487687085-%26ntime%3D1487691477",
+  "X-Requested-With":"XMLHttpRequest",      
+  "DATAMSG":"color=16777215&fontsize=25&mode=1&msg=SS&rnd=1487691473&roomid=5440"
+}
