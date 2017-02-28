@@ -1,22 +1,28 @@
 ﻿*** Settings ***
-Test Setup        Create HTTP Context    ${Host}
-Library       JsonLib.py
-Library       RequestsLibrary
-Library       HttpLibrary.HTTP
-
-
-
+Suite Setup    Json Content
+Test Setup     Create HTTP Context    ${Host}
+Library    JsonLib.py
+Library    RequestsLibrary
+Library    HttpLibrary.HTTP
+ 
+   
 *** Variables ***
-${Host}    api.live.bilibili.com
+${Host}    ***.com
 
-*** Test Cases ***
+*** Keywords ***
+Json Content
+    ${my_json}    Load JSON DATA From File    ./v.json
+    ${content}    To Json    ${my_json} 
+ 
+*** Test Cases ***	
 Send Msg
-    ${my_json}     Load JSON DATA From File     ./v.json
-    ${content}      To Json         ${my_json}
+    ${my_json}    Load JSON DATA From File    ./v.json
+    ${content}    To Json    ${my_json}
     Set Request Header    Cookie    ${content["COOKIE"]}    
     Set Request Header    X-Requested-With    ${content["X-Requested-With"]}
-    Set Request Body      ${content["DATAMSG"]}
+    Set Request Body    ${content["DATAMSG"]}
     HttpLibrary.HTTP.POST    ${content["SENDMSG"]}    
     Response Status Code Should Equal    200
     Response Body Should Contain    "code":0,"msg":"","data":[]
-    Log    HttpLibrary.HTTP.Response Body
+    Log Response Status
+    Log Response Body
