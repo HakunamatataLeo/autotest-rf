@@ -13,11 +13,10 @@ ${Host}    ***.com
 Json Content
     ${my_json}    Load JSON DATA From File    ./v.json
     ${content}    To Json    ${my_json} 
+    ${content}    Set Global Variable    ${content}
  
 *** Test Cases ***	
 Send Msg
-    ${my_json}    Load JSON DATA From File    ./v.json
-    ${content}    To Json    ${my_json}
     Set Request Header    Cookie    ${content["COOKIE"]}    
     Set Request Header    X-Requested-With    ${content["X-Requested-With"]}
     Set Request Body    ${content["DATAMSG"]}
