@@ -7,11 +7,12 @@ def _POST(self):
     body = self.param['body']
     expect = self.param['expect']
 
-    r = requests.post(url, headers=headers, json=body)
+    r = requests.post(url, headers=headers, data=body)
     assert r.ok
+    print body
     resp_data = r.json()
     for k, v in expect.iteritems():
-        assert resp_data[k] == v
+        assert resp_data[k] == v, "%s" % resp_data
 
 
 def _GET(self):
@@ -20,7 +21,7 @@ def _GET(self):
     body = self.param['body']
     expect = self.param['expect']
 
-    r = requests.get(url, headers=headers, json=body)
+    r = requests.get(url, headers=headers, data=body)
     assert r.ok
     resp_data = r.json()
     for k, v in expect.iteritems():
